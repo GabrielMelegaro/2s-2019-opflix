@@ -10,19 +10,28 @@ create table Usuarios
 	,Nome varchar(255) not null
 	,Email varchar(255) not null
 	,Senha varchar(255) not null
-	,Permissao varchar(255) not null
+	,Permissao varchar(255) default 'comum'
 );
+
+drop table Usuarios
+
+select * from Usuarios
+
 create table Categoria 
 (
 	IdCategoria int primary key identity
-	,Nome varchar(255) not null 
+	,NomeCategoria varchar(255) not null 
 );
+
+drop table Categoria
 
 create table Plataforma
 (
 	IdPlataforma int primary key identity
-	,Nome varchar(255) not null
+	,NomePlataforma varchar(255) not null
 );
+
+drop table Plataforma
 
 alter table dbo.Sinopse add Descricao varchar(2000);
 
@@ -32,6 +41,8 @@ create table Sinopse
 	,Descricao varchar(2000) not null
 );
 
+drop table Sinopse
+
 alter table dbo.Sinopse drop column Descricao;
 
 select * from Sinopse
@@ -39,8 +50,10 @@ select * from Sinopse
 create table Tipo
 (
 	IdTipo int primary key identity
-	,Estilo varchar(255) not null
+	,NomeTipo varchar(255) not null
 );
+
+drop table Tipo
 create table Lancamento
 (
 	IdLancamento int primary key identity
@@ -52,6 +65,8 @@ create table Lancamento
 	,DataLancamento date not null
 	,IdPlataforma int foreign key references Plataforma(IdPlataforma)
 );
+
+drop table Lancamento
 
 alter table dbo.Usuarios add Permissao varchar(255);
 select * from Usuarios;
