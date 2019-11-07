@@ -58,12 +58,12 @@ create table Lancamento
 (
 	IdLancamento int primary key identity
 	,Titulo varchar(255) not null
-	,IdSinopse int foreign key references Sinopse(IdSinopse)
+	,Sinopse varchar(4000) not null 
 	,Duracao Time not null
-	,IdCategoria int foreign key references Categoria(IdCategoria)
-	,IdTipo int foreign key references Tipo(IdTipo)
+	,Categoria varchar(255) not null
+	,Tipo varchar(255) not null
 	,DataLancamento date not null
-	,IdPlataforma int foreign key references Plataforma(IdPlataforma)
+	,Plataforma varchar(255) not null
 );
 
 drop table Lancamento

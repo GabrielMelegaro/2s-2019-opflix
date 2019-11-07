@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { FlatList, TextInput } from 'react-native-gesture-handler';
+import {Text , View} from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 
 class Main extends Component{
     constructor(){
@@ -7,12 +8,12 @@ class Main extends Component{
         this.state = {
             lancamentos: [],
             titulo: "",
-            idSinopse: "",
+            sinopse: "",
             duracao: "",
-            idCategoria: "",
-            idTipo: "",
+            categoria: "",
+            tipo: "",
             dataLanc: "",
-            idPlataforma: "",
+            plataforma: "",
         };
     }
 
@@ -63,15 +64,16 @@ class Main extends Component{
             renderItem={({item}) => (
                 <View>
                     <Text>{item.titulo}</Text>
-                    <Text>{item.idSinopse}</Text>
+                    <Text>{item.sinopse}</Text>
                     <Text>{item.duracao}</Text>
-                    <Text>{item.idCategoria}</Text>
-                    <Text>{item.idTipo}</Text>
-                    <Text>{item.dataLanc}</Text>
-                    <Text>{item.idPlataforma}</Text>
+                    <Text>{item.categoria}</Text>
+                    <Text>{item.tipo}</Text>
+                    <Text>{item.dataLancamento}</Text>
+                    <Text>{item.plataforma}</Text>
                 </View>
                 )}
             />
         );
     }
 }
+export default Main;

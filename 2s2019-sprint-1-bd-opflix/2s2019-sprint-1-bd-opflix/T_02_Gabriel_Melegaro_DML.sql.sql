@@ -36,7 +36,7 @@ insert into Categoria values ('Aventura');
 
 select * from Categoria;
 
-insert into Plataforma (Nome) values ('Netflix')
+insert into Plataforma (NomePlataforma) values ('Netflix')
 									,('Globoplay')						
 									,('Amazon')
 									,('Now')
@@ -48,23 +48,7 @@ select * from Plataforma;
 delete from Plataforma
 where IdPlataforma = 13;
 
-insert into Sinopse(Descricao) values ('Um grupo de adolescentes tem pesadelos horríveis, em que são atacados por um homem deformado com garras de aço. Ele apenas aparece durante o sono e, 
-para escapar, é preciso acordar. Os crimes vão ocorrendo seguidamente, até que se descobre que o ser misterioso é na verdade Freddy Krueger, 
-um homem que molestou crianças na rua Elm e que foi queimado vivo pela vizinhança. Agora, Krueger pode ter retornado para se vingar daqueles que o mataram, através do sono.')
-						 ,('A série animada do horário nobre e a comédia há mais tempo no ar na história da televisão, “OS SIMPSONS” também é uma instituição cultural. 
-						 Atualmente em sua 19ª temporada, “OS SIMPSONS” tem uma base de fãs dedicada e extremamente leal em todo o mundo. Com roteiros inteligentes, 
-						 humor subversivo e divertidamente genial, a série faz piadas de si mesma e de todo mundo que aparecer em seu caminho. Criada por Matt Groening, 
-						 a família Simpsons mora na cidade de Springfield.
-						 Homer (voz de Dan Castellaneta) trabalha como inspetor de segurança num usina de energia nuclear. Marge (voz de Julie Kavner) tenta manter a paz em sua família. 
-						 Bart (voz de Nancy Cartwright) é um travesso garoto de 10 anos. Lisa (voz de Yeardley Smith), 8, é a inteligente da família,
-						 que adora tocar saxofone e é vegetariana. E a pequena Maggie conquista todos enquanto não larga sua chupeta. E a série tem um rico, e muitas vezes estranho,
-						 universo de personagens que também habitam Springfield.')
-						 ,('Nos Estados Unidos pós-apocalíptico, um pequeno grupo de sobreviventes segue viajando à procura de uma nova casa longe dos mortos-vivos.
-						 O desespero por segurança e suprimentos os coloca constantemente à beira da sanidade.')
-						 ,('Dez anos após a conquista da liberdade, César lidera uma nação de macacos geneticamente evoluídos, que está sendo ameaçada por um grupo de humanos sobrevivente 
-						 de um vírus mortal.')
-						 ,('Johnny English usa suas questionáveis habilidades em combate para proteger um líder chinês de um grupo de assassinos. Então, English usa seus aparelhos
-						 de alta tecnologia para desmascarar uma conspiração antes da realização de um encontro de chefes de estado.');
+insert into Sinopse(Descricao) values ('blahblahblah')
 
 delete from Sinopse
 where IdSinopse = 44;
@@ -74,16 +58,16 @@ Select * from Sinopse;
 delete from Tipo
 where IdTipo = 4;
 
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('A Hora do Pesadelo',1,'02:12:00',1,1,'27-11-1986',5);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('Os Simpsons',2,'23:37:00',3,1,'17-12-1989',1);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('La Casa De Papel 3',3,'12:53:00',2,1,'31-10-2010',1);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('O Rei Leão',4,'01:54:00',9,2,'08-07-1994',6);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('O Retorno de Johnny English',5,'01:42:00',3,2,'28-10-2010',4);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('Os Vingadores: Ultimato',4,'01:54:00',7,2,'08-07-1994',6);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('Toy Story 4',4,'01:54:00',9,2,'08-07-1994',6);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('Velozes & Furiosos: Hobbs e Shaw',4,'01:54:00',7,2,'08-07-1994',6);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('Guardioes da Galaxia',4,'01:54:00',8,2,'08-07-1994',2);
-insert into Lancamento(Titulo,IdSinopse,Duracao,IdCategoria,IdTipo,DataLancamento,IdPlataforma) values('Guardioes da Galaxia Vol.2',4,'01:54:00',5,2,'08-07-1994',3);
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('A Hora do Pesadelo','blahblahblah','02:12:00','Terror','Filme','27-11-1986','VHS');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('Os Simpsons','blahblahblah','23:37:00','Comédia','Serie','17-12-1989','Amazon');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('La Casa De Papel 3','blahblahblah','12:53:00','Suspense','Serie','31-10-2010','Netflix');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('O Rei Leão','blahblahblah', '01:54:00','Aventura','Filme','08-07-1994','Cinema');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('O Retorno de Johnny English','blahblahblah','01:42:00','Comédia','Serie','28-10-2010','Now');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('Os Vingadores: Ultimato','blahblahblah','01:54:00','Ação','Filme','08-07-1994','Cinema');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('Toy Story 4','blahblahblah', '01:54:00','Aventura','Filme','08-07-1994','Cinema');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('Velozes & Furiosos: Hobbs e Shaw','blahblahblah','01:54:00','Ação','Filme','08-07-1994','Netflix');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('Guardioes da Galaxia','blahblahblah','01:54:00','Documentário','Filme','08-07-1994','Globoplay');
+insert into Lancamento(Titulo,Sinopse,Duracao,Categoria,Tipo,DataLancamento,Plataforma) values('Guardioes da Galaxia Vol.2','blahblahblah','01:54:00','Drama','Filme','08-07-1994','Globoplay');
 update Lancamento SET Titulo  =  'La Casa De Papel - 3º Temporada'
 where IdLancamento = 54;
 
