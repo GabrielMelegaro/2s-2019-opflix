@@ -4,9 +4,11 @@ import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
 import SignInScreen from './pages/signin';
 import MainScreen from './pages/main';
+import SignUpScreen from './pages/signup';
 
 const AuthStack = createStackNavigator({
-    Sign: {screen: SignInScreen},
+    SignIn: {screen: SignInScreen},
+    SignUp: {screen: SignUpScreen},
 });
 
 const MainNavigator = createBottomTabNavigator(

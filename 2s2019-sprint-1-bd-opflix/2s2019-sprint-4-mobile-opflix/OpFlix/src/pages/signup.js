@@ -8,7 +8,7 @@ import{
     AsyncStorage
     } from 'react-native';
 
-class SignIn extends Component {
+class SignUp extends Component {
     static navigationOptions = {
         header: null,
     };
@@ -16,19 +16,33 @@ class SignIn extends Component {
     constructor(){
         super();
         this.state = {
+            nome: "",
             email: "",
             senha: "",
         };
     }
 
-    _realizarLogin = async () => {
-        await fetch('http://192.168.6.220:5000/api/login',{
+    mudarNome = (event) => {
+        this.setState({nome: event.target.value});
+    }
+
+    mudarEmail = (event) => {
+        this.setState({email: event.target.value});
+    }
+
+    mudarSenha = (event) => {
+        this.setState({senha: event.target.value});
+    }
+
+    _realizarCadastro = async () => {
+        await fetch('http://192.168.6.220:5000/api/usuario',{
             method: 'POST',
             headers: {
                 Accept : 'application/json',
                 'Content-Type' : 'application/json',
             },
             body: JSON.stringify({
+                nome: this.state.nome,
                 email: this.state.email,
                 senha: this.state.senha,
             }),
@@ -38,11 +52,11 @@ class SignIn extends Component {
         .catch(erro => console.warn(erro));
     };
 
-    _IrParaHome = async (tokenAReceber) => {
+    _IrParaLogin = async (tokenAReceber) => {
         if(tokenAReceber != null){
             try{
                 await AsyncStorage.setItem('@opflix:token', tokenAReceber);
-                this.props.navigation.navigate('MainNavigator');
+                this.props.navigation.navigate('AuthStack');
             }catch (error) {}
         }
     }
@@ -51,6 +65,10 @@ class SignIn extends Component {
         return(
             <View>
                 <TextInput
+                placeholder="Digite seu Nome"
+                onChangeText={nome => this.setState({nome})}
+                value={this.state.nome}/>
+                <TextInput
                 placeholder="Digite seu Email"
                 onChangeText={email => this.setState({email})}
                 value={this.state.email}/>
@@ -58,11 +76,11 @@ class SignIn extends Component {
                 placeholder="Digite sua Senha"
                 onChangeText={senha => this.setState({senha})}
                 value={this.state.senha}/>
-                <TouchableOpacity onPress={this._realizarLogin}>
-                    <Text>Login</Text>
+                <TouchableOpacity onPress={this._realizarCadastro}>
+                    <Text>Cadastro</Text>
                 </TouchableOpacity>
             </View>
         );
     }
 }
-export default SignIn
+export default SignUp
