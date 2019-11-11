@@ -5,12 +5,20 @@ import{
     Text, 
     View,
     TouchableOpacity, 
-    AsyncStorage
+    AsyncStorage,
+    Image,
+    StyleSheet,
     } from 'react-native';
 
 class SignIn extends Component {
     static navigationOptions = {
         header: null,
+        TabBarIcon: () => (
+            <Image
+                Source={require('../assets/img/download.png')}
+                style={styles.tabBarEstilizacao}
+            />
+        )
     };
     
     constructor(){
@@ -47,6 +55,12 @@ class SignIn extends Component {
         }
     }
 
+    _IrParaCadastro = async() => {
+        try{
+            this.props.navigation.navigate('AuthStack1');
+        }catch (error) {}
+    }
+
     render(){
         return(
             <View>
@@ -61,8 +75,17 @@ class SignIn extends Component {
                 <TouchableOpacity onPress={this._realizarLogin}>
                     <Text>Login</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={this._IrParaCadastro}>
+                    <Text>Cadastrar-se</Text>
+                </TouchableOpacity>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    tabBarEstilizacao:
+    {width: 100}
+})
+
 export default SignIn

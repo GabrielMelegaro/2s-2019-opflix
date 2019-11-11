@@ -52,13 +52,10 @@ class SignUp extends Component {
         .catch(erro => console.warn(erro));
     };
 
-    _IrParaLogin = async (tokenAReceber) => {
-        if(tokenAReceber != null){
-            try{
-                await AsyncStorage.setItem('@opflix:token', tokenAReceber);
-                this.props.navigation.navigate('AuthStack');
-            }catch (error) {}
-        }
+    _IrParaLogin = async () => {
+        try{
+            this.props.navigation.navigate('AuthStack');
+        }catch (error) {}
     }
 
     render(){
@@ -78,6 +75,9 @@ class SignUp extends Component {
                 value={this.state.senha}/>
                 <TouchableOpacity onPress={this._realizarCadastro}>
                     <Text>Cadastro</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this._IrParaLogin}>
+                    <Text>Voltar ao Login</Text>
                 </TouchableOpacity>
             </View>
         );

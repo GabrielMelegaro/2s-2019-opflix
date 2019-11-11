@@ -5,16 +5,24 @@ import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import SignInScreen from './pages/signin';
 import MainScreen from './pages/main';
 import SignUpScreen from './pages/signup';
+import ProfileScreen from './pages/profile';
 
 const AuthStack = createStackNavigator({
     SignIn: {screen: SignInScreen},
     SignUp: {screen: SignUpScreen},
 });
 
+const AuthStack1 = createStackNavigator({
+    SignUp:{screen : SignUpScreen},
+})
+
 const MainNavigator = createBottomTabNavigator(
     {
         Main: {
             screen: MainScreen,
+        },
+        Profile: {
+            screen: ProfileScreen,
         },
     },
     {
@@ -22,8 +30,8 @@ const MainNavigator = createBottomTabNavigator(
         tabBarOptions: {
             showLabel: false,
             showIcon: true,
-            activeBackgroundColor:'#9900e6',
-            inactiveBackgroundColor: '#b727ff',
+            activeBackgroundColor:'#151516',
+            inactiveBackgroundColor: '#ffffff',
             style: {
                 width: '100%',
                 height: 50
@@ -37,6 +45,7 @@ export default createAppContainer(
         {
             MainNavigator,
             AuthStack,
+            AuthStack1,
         },
         {
             initialRouteName:'AuthStack',

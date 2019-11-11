@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component,} from 'react';
 import {Text , View} from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, BaseButton } from 'react-native-gesture-handler';
 
 class Main extends Component{
     constructor(){
@@ -63,6 +63,10 @@ class Main extends Component{
             keyExtractor={item => item.idLancamento}
             renderItem={({item}) => (
                 <View>
+                    {/* <Button>Escolha Uma Categoria</Button> */}
+                    <BaseButton>
+                        <Text>Escolha Uma Opcao</Text>
+                    </BaseButton>
                     <Text>{item.titulo}</Text>
                     <Text>{item.sinopse}</Text>
                     <Text>{item.duracao}</Text>
