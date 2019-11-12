@@ -6,19 +6,19 @@ import{
     View,
     TouchableOpacity, 
     AsyncStorage,
-    Image,
+    ImageBackground,
     StyleSheet,
     } from 'react-native';
 
 class SignIn extends Component {
     static navigationOptions = {
         header: null,
-        TabBarIcon: () => (
-            <Image
-                Source={require('../assets/img/download.png')}
-                style={styles.tabBarEstilizacao}
-            />
-        )
+        // TabBarIcon: () => (
+        //     <Image
+        //         Source={require('../assets/img/download.png')}
+        //         style={styles.tabBarEstilizacao}
+        //     />
+        // )
     };
     
     constructor(){
@@ -64,6 +64,10 @@ class SignIn extends Component {
     render(){
         return(
             <View>
+            <ImageBackground
+                source={require('../assets/img/download.png')}
+                style={StyleSheet.absoluteFillObject}
+            />
                 <TextInput
                 placeholder="Digite seu Email"
                 onChangeText={email => this.setState({email})}
@@ -83,7 +87,7 @@ class SignIn extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     tabBarEstilizacao:
     {width: 100}
 })

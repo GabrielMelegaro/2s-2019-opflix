@@ -50,10 +50,13 @@ class SignUp extends Component {
         .then(resposta => resposta.json())
         .then(data => this._IrParaHome(data.token))
         .catch(erro => console.warn(erro));
+        try{
+            console.warn('Cadastro concluido com sucesso, favor retornar a pagina de login!')
+        }catch(error){}
     };
 
     _IrParaLogin = async () => {
-        try{
+        try{ 
             this.props.navigation.navigate('AuthStack');
         }catch (error) {}
     }

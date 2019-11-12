@@ -36,6 +36,21 @@ class Profile extends Component{
                 </View>
                 )}
             />
+
+            <Text>Terror</Text>
+                <FlatList
+                    horizontal={true}
+                    data={this.state.categorias.filter(item => { return item.idCategoria === 1 })}
+                    keyExtractor={item => item.idLanc}
+                    renderItem={({item}) => (
+                        <View>
+                            <Image
+                            style={styles.img}
+                            source={{ uri: item.FotoLanc }}
+                            />
+                    </View>
+                )}               
+            />    
         );
     }
 }

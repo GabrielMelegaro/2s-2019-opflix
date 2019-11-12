@@ -1,6 +1,6 @@
 import React, {Component,} from 'react';
-import {Text , View} from 'react-native';
-import { FlatList, BaseButton } from 'react-native-gesture-handler';
+import {Text , View,} from 'react-native';
+import { FlatList,} from 'react-native-gesture-handler';
 
 class Main extends Component{
     constructor(){
@@ -56,6 +56,12 @@ class Main extends Component{
             .catch(erro => console.warn(erro));
     };
 
+    _Logout = async() => {
+        try{
+            this.props.navigation.navigate('AuthStack');
+        }catch (error) {}
+    }
+
     render(){
         return(
             <FlatList
@@ -64,9 +70,6 @@ class Main extends Component{
             renderItem={({item}) => (
                 <View>
                     {/* <Button>Escolha Uma Categoria</Button> */}
-                    <BaseButton>
-                        <Text>Escolha Uma Opcao</Text>
-                    </BaseButton>
                     <Text>{item.titulo}</Text>
                     <Text>{item.sinopse}</Text>
                     <Text>{item.duracao}</Text>
@@ -75,6 +78,12 @@ class Main extends Component{
                     <Text>{item.dataLancamento}</Text>
                     <Text>{item.plataforma}</Text>
                 </View>
+                
+                // <View>
+                //     <TouchableOpacity onPress={this._Logout}>
+                //     <Text>Logout</Text>
+                //     </TouchableOpacity>
+                // </View>
                 )}
             />
         );
