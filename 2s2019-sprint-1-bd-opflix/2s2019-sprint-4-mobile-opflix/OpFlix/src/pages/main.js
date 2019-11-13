@@ -1,6 +1,6 @@
 import React, {Component,} from 'react';
-import {Text , View,} from 'react-native';
-import { FlatList,} from 'react-native-gesture-handler';
+import {Text , View, StyleSheet, Image} from 'react-native';
+import { FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 
 class Main extends Component{
     constructor(){
@@ -77,16 +77,36 @@ class Main extends Component{
                     <Text>{item.tipo}</Text>
                     <Text>{item.dataLancamento}</Text>
                     <Text>{item.plataforma}</Text>
-                </View>
                 
-                // <View>
-                //     <TouchableOpacity onPress={this._Logout}>
-                //     <Text>Logout</Text>
-                //     </TouchableOpacity>
-                // </View>
+                    <FlatList
+                        horizontal={true}
+                        data={this.state.lancamentos.filter(item => { return item.Categoria === 'Terror' })}
+                        keyExtractor={item => item.idLancamento}
+                        renderItem={({item}) => (
+                            <View>
+                            <Image
+                            style={styles.img}
+                            source={{ uri: item.FotoLanc }}
+                            />
+                        </View>
+                    )}               
+                />
+
+                <View>
+                    <TouchableOpacity onPress={this._Logout}>
+                    <Text>Logout</Text>
+                    </TouchableOpacity>
+                </View>
+                </View>
                 )}
             />
         );
     }
 }
+
+const styles = StyleSheet.create({
+    tabBarEstilizacao:
+    {width: 100}
+  })
+
 export default Main;

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { FlatList } from 'react-native-gesture-handler';
-import {Text, View} from 'react-native';
+import {Text, View, Image, StyleSheet} from 'react-native';
 
 class Profile extends Component{
     static navigationOptions = {
@@ -10,7 +10,7 @@ class Profile extends Component{
     constructor(){
         super();
         this.state = {
-            categorias: [],
+            categorias: []
         };
     }
 
@@ -27,31 +27,38 @@ class Profile extends Component{
 
     render(){
         return(
-            <FlatList
-            data={this.state.categorias}
-            keyExtractor={item => item.idCategoria}
-            renderItem={({item}) => (
-                <View>
-                    <Text>{item.nomeCategoria}</Text>
-                </View>
-                )}
-            />
-
-            <Text>Terror</Text>
+            <Fragment>
                 <FlatList
-                    horizontal={true}
-                    data={this.state.categorias.filter(item => { return item.idCategoria === 1 })}
-                    keyExtractor={item => item.idLanc}
-                    renderItem={({item}) => (
-                        <View>
+                data={this.state.categorias}
+                keyExtractor={item => item.idCategoria}
+                renderItem={({item}) => (
+                    <View>
+                        <Text>{item.nomeCategoria}</Text>
+                    </View>
+                    )}
+                />    
+
+                    {/* <FlatList
+                        horizontal={true}
+                        data={this.state.categorias.filter(item => { return item.Categoria === 'Terror' })}
+                        keyExtractor={item => item.idLancamento}
+                        renderItem={({item}) => (
+                            <View>
                             <Image
                             style={styles.img}
                             source={{ uri: item.FotoLanc }}
                             />
-                    </View>
-                )}               
-            />    
+                        </View>
+                    )}               
+                />     */}
+            </Fragment>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    tabBarEstilizacao:
+    {width: 100,}
+  })
+  
 export default Profile
