@@ -6,7 +6,7 @@ class Main extends Component {
     constructor() {
         super();
         this.state = {
-            lancamentos: [],
+            lista: [],
             // titulo: "",
             // sinopse: "",
             // duracao: "",
@@ -52,7 +52,7 @@ class Main extends Component {
     _carregarLancamentos = async () => {
         await fetch('http://192.168.6.220:5000/api/lancamentos')
             .then(resposta => resposta.json())
-            .then(data => this.setState({ lancamentos: data }))
+            .then(data => this.setState({ lista: data }))
             .catch(erro => console.warn(erro));
     };
 
@@ -69,27 +69,28 @@ class Main extends Component {
                 <ScrollView>
 
                     <FlatList
-                        data={this.state.lancamentos}
+                        data={this.state.lista}
                         keyExtractor={item => item.idLancamento}
                         renderItem={({ item }) => (
                             <View>
-                                 <Text>Escolha Uma Categoria</Text> 
+                                  {/* <Text>Escolha Uma Categoria</Text> 
                                  <Text>{item.titulo}</Text>
-                    {/* <Text>{item.sinopse}</Text> */}
+                     <Text>{item.sinopse}</Text> 
                     <Text>{item.duracao}</Text>
                     <Text>{item.categoria}</Text>
                     <Text>{item.tipo}</Text>
                     <Text>{item.dataLancamento}</Text>
-                <Text>{item.plataforma}</Text>
+                <Text>{item.plataforma}</Text>  */}
 
                                 <Text>Terror</Text>
                                 <FlatList
                                     horizontal={true}
-                                    data={this.state.lancamentos.filter(item => { return item.categoria === 'Terror' })}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 7 })}
                                     keyExtractor={item => item.idLancamento}
                                     renderItem={({ item }) => (
                                         <View>
                                             <Image
+                                                title={item.titulo}
                                                 style={styles.img}
                                                 source={{ uri: item.fotoLanc }}
                                             />
@@ -97,11 +98,11 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <Text>Suspense</Text>
+                                <Text>Suspense</Text>                                              
 
                                 <FlatList
                                     horizontal={true}
-                                    data={this.state.lancamentos.filter(item => { return item.categoria === 'Suspense' })}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 2 })}
                                     keyExtractor={item => item.idLancamento}
                                     renderItem={({ item }) => (
                                         <View>
@@ -129,7 +130,7 @@ class Main extends Component {
 
 const styles = StyleSheet.create({
     img:
-        { width: 100, height: 100 }
+        { width: 200, height: 200 }
 })
 
 export default Main;

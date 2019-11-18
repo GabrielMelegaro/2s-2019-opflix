@@ -9,7 +9,6 @@ import ProfileScreen from './pages/profile';
 
 const AuthStack = createStackNavigator({
     SignIn: {screen: SignInScreen},
-    SignUp: {screen: SignUpScreen},
 });
 
 const AuthStack1 = createStackNavigator({
