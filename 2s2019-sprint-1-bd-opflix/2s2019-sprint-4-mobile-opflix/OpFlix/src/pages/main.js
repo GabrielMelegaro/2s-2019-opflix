@@ -3,8 +3,8 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import { FlatList, TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 
 class Main extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             lista: [],
             // titulo: "",
@@ -68,21 +68,25 @@ class Main extends Component {
 
                 <ScrollView>
 
-                    <FlatList
-                        data={this.state.lista}
-                        keyExtractor={item => item.idLancamento}
-                        renderItem={({ item }) => (
-                            <View>
-                                  {/* <Text>Escolha Uma Categoria</Text> 
-                                 <Text>{item.titulo}</Text>
-                     <Text>{item.sinopse}</Text> 
-                    <Text>{item.duracao}</Text>
-                    <Text>{item.categoria}</Text>
-                    <Text>{item.tipo}</Text>
-                    <Text>{item.dataLancamento}</Text>
-                <Text>{item.plataforma}</Text>  */}
+                        <FlatList
+                            data={this.state.lista}
+                            keyExtractor={item => item.idLancamento}
+                            renderItem={({ item }) => (
+                        <View>
+                           {/* <Text>Escolha Uma Categoria</Text> 
+                                      <Text>{item.titulo}</Text>
+                                    <Text>{item.sinopse}</Text> 
+                                      <Text>{item.duracao}</Text>
+                                      <Text>{item.categoria}</Text>
+                                      <Text>{item.tipo}</Text>
+                                      <Text>{item.dataLancamento}</Text>
+                                     <Text>{item.plataforma}</Text>   */}
+                        </View>
+                            )}
+                        />
 
-                                <Text>Terror</Text>
+                            <Text>Ação</Text>
+
                                 <FlatList
                                     horizontal={true}
                                     data={this.state.lista.filter(item => { return item.idCategoria === 7 })}
@@ -90,7 +94,6 @@ class Main extends Component {
                                     renderItem={({ item }) => (
                                         <View>
                                             <Image
-                                                title={item.titulo}
                                                 style={styles.img}
                                                 source={{ uri: item.fotoLanc }}
                                             />
@@ -98,7 +101,7 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <Text>Suspense</Text>                                              
+                                <Text>Suspense</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -114,13 +117,75 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <View>
-                                    <TouchableOpacity onPress={this._Logout}>
-                                        <Text>Logout</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        )}
+                                <Text>Terror</Text>
+
+                                <FlatList
+                                    horizontal={true}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 1 })}
+                                    keyExtractor={item => item.idLancamento}
+                                    renderItem={({ item }) => (
+                                        <View>
+                                            <Image
+                                                style={styles.img}
+                                                source={{ uri: item.fotoLanc }}
+                                            />
+                                        </View>
+                                    )}
+                                />
+
+                                <Text>Aventura</Text>
+
+                                <FlatList
+                                    horizontal={true}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 9 })}
+                                    keyExtractor={item => item.idLancamento}
+                                    renderItem={({ item }) => (
+                                        <View>
+                                            <Image
+                                                style={styles.img}
+                                                source={{ uri: item.fotoLanc }}
+                                            />
+                                        </View>
+                                    )}
+                                />
+                                <Text>Documentário</Text>
+
+                                <FlatList
+                                    horizontal={true}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 8 })}
+                                    keyExtractor={item => item.idLancamento}
+                                    renderItem={({ item }) => (
+                                        <View>
+                                            <Image
+                                                style={styles.img}
+                                                source={{ uri: item.fotoLanc }}
+                                            />
+                                        </View>
+                                    )}
+                                />
+
+                                <Text>Drama</Text>
+
+                                <FlatList
+                                    horizontal={true}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 5 })}
+                                    keyExtractor={item => item.idLancamento}
+                                    renderItem={({ item }) => (
+                                        <View>
+                                            <Image
+                                                style={styles.img}
+                                                source={{ uri: item.fotoLanc }}
+                                            />
+                                        </View>
+                                    )}
+                                />
+    
+                    <View>
+                        <TouchableOpacity onPress={this._Logout}>
+                            <Text>Logout</Text>
+                        </TouchableOpacity>
+                    </View>
+
                     />
                 </ScrollView>
             </View>
