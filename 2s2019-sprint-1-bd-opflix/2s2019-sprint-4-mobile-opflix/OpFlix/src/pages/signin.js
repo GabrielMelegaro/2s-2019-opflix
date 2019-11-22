@@ -64,10 +64,10 @@ class SignIn extends Component {
     render(){
         return(
             <View>
-            <ImageBackground
+            {/* <ImageBackground
                 source={require('../assets/img/download.png')}
                 style={StyleSheet.absoluteFillObject}
-            />
+            /> */}
                 <TextInput
                 placeholder="Digite seu Email"
                 onChangeText={email => this.setState({email})}

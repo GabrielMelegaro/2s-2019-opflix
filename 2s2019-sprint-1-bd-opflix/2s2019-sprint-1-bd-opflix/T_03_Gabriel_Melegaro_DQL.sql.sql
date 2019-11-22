@@ -64,3 +64,6 @@ update Lancamento set fotoLanc = 'https://bit.ly/2KAKRU0' where IdCategoria = 8;
 update Lancamento set fotoLanc = 'https://bit.ly/37knmrU' where IdCategoria = 5;
 
 drop table Lancamento
+
+alter table Usuarios
+add fotoUsuario varchar(2000) default 'https://bit.ly/34iEUTG' not null

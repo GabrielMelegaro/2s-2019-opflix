@@ -4,7 +4,7 @@ import { FlatList, TouchableOpacity, ScrollView } from 'react-native-gesture-han
 
 class Main extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             lista: [],
             // titulo: "",
@@ -67,6 +67,8 @@ class Main extends Component {
             <View>
 
                 <ScrollView>
+
+                    <View>
 
                         <FlatList
                             data={this.state.lista}
@@ -186,7 +188,7 @@ class Main extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    />
+                    </View>
                 </ScrollView>
             </View>
         );
