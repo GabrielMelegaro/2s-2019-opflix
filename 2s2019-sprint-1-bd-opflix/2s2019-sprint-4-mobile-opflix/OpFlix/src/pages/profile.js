@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import { FlatList, TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 import {Text, View, Image, StyleSheet, AsyncStorage} from 'react-native';
 import jwt from 'jwt-decode';
 
@@ -37,9 +37,10 @@ class Profile extends Component{
     render(){
         return(
             <View style={styles.page}>
+                
                    <Image
                    style={styles.img}
-                    source={{  uri: this.state.foto  }}
+                   source={{  uri: this.state.foto  }}
                    /> 
                     <Text style={styles.textstyle}>{this.state.nome}</Text>
                     <Text style={styles.textstyle}>{this.state.email}</Text>
@@ -55,11 +56,11 @@ class Profile extends Component{
 
 const styles = StyleSheet.create({
     page:
-    {backgroundColor: "#2F3538"},
+    {backgroundColor: "#2F3538", height: 650, justifyContent: "center"},
     img:
-    { width: 150, height: 150, display: "flex" , borderRadius: 75, paddingbottom: 30,  },
+    { width: 150, height: 150, display: "flex" , borderRadius: 75, marginLeft: 130, },
     textstyle:
-    {textAlign: "center", color: "#ffffff"}
+    {textAlign: "center", color: "#ffffff", marginTop: 20,},
 })
 
 export default Profile;

@@ -68,7 +68,7 @@ class Main extends Component {
 
                 <ScrollView>
 
-                    <View>
+                    <View style={styles.pagefull}>
 
                         <FlatList
                             data={this.state.lista}
@@ -87,7 +87,7 @@ class Main extends Component {
                             )}
                         />
 
-                            <Text>Ação</Text>
+                            <Text style={styles.textLanc}>Ação</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -103,7 +103,7 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <Text>Suspense</Text>
+                                <Text style={styles.textLanc}>Suspense</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -119,7 +119,7 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <Text>Terror</Text>
+                                <Text style={styles.textLanc}>Terror</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -135,7 +135,7 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <Text>Aventura</Text>
+                                <Text style={styles.textLanc}>Aventura</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -150,7 +150,7 @@ class Main extends Component {
                                         </View>
                                     )}
                                 />
-                                <Text>Documentário</Text>
+                                <Text style={styles.textLanc}>Documentário</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -166,7 +166,7 @@ class Main extends Component {
                                     )}
                                 />
 
-                                <Text>Drama</Text>
+                                <Text style={styles.textLanc}>Drama</Text>
 
                                 <FlatList
                                     horizontal={true}
@@ -184,7 +184,7 @@ class Main extends Component {
     
                     <View>
                         <TouchableOpacity onPress={this._Logout}>
-                            <Text>Logout</Text>
+                            <Text style={styles.textLanc}>Logout</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -197,7 +197,11 @@ class Main extends Component {
 
 const styles = StyleSheet.create({
     img:
-        { width: 200, height: 200 }
+        { width: 200, height: 200 },
+    pagefull:
+        { backgroundColor: "#2F3538", },
+    textLanc:
+        { color: "#ffffff", backgroundColor: "#B40A1B"}
 })
 
 export default Main;

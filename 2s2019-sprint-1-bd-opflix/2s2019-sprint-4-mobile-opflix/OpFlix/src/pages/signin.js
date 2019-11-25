@@ -63,24 +63,24 @@ class SignIn extends Component {
 
     render(){
         return(
-            <View>
+            <View style={style.page}>
             {/* <ImageBackground
                 source={require('../assets/img/download.png')}
                 style={StyleSheet.absoluteFillObject}
             /> */}
-                <TextInput
+                <TextInput style={style.input1}
                 placeholder="Digite seu Email"
                 onChangeText={email => this.setState({email})}
                 value={this.state.email}/>
-                <TextInput
+                <TextInput style={style.input}
                 placeholder="Digite sua Senha"
                 onChangeText={senha => this.setState({senha})}
                 value={this.state.senha}/>
                 <TouchableOpacity onPress={this._realizarLogin}>
-                    <Text>Login</Text>
+                    <Text style={style.button}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this._IrParaCadastro}>
-                    <Text>Cadastrar-se</Text>
+                    <Text style={style.button}>Cadastrar-se</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -88,8 +88,14 @@ class SignIn extends Component {
 }
 
 const style = StyleSheet.create({
-    tabBarEstilizacao:
-    {width: 100}
-})
+    page:
+    {display: "flex", backgroundColor: "#2F3538", marginTop: 160, },
+    input1:
+    {color: "#ffffff", display: "flex", marginLeft: 165, marginBottom: 20, marginTop: 20 },
+    input:
+    {color: "#ffffff", display: "flex", marginLeft: 178, marginBottom: 20, marginTop: 20},
+    button:
+    {display: "flex",marginBottom: 20, marginTop: 20, textAlign: "center",color: "#ffffff", borderRadius: 30, borderColor: "#B40A1B", borderWidth: 1,}
 
+})
 export default SignIn

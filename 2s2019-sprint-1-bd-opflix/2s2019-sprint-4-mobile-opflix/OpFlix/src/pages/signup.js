@@ -5,7 +5,7 @@ import{
     Text, 
     View,
     TouchableOpacity, 
-    AsyncStorage
+    AsyncStorage, StyleSheet
     } from 'react-native';
 
 class SignUp extends Component {
@@ -63,27 +63,41 @@ class SignUp extends Component {
 
     render(){
         return(
-            <View>
-                <TextInput
-                placeholder="Digite seu Nome"
+            <View style={style.page}>
+                <TextInput style={style.inputcadastro}
+                placeholder="Digite seu Nome" 
                 onChangeText={nome => this.setState({nome})}
                 value={this.state.nome}/>
-                <TextInput
+                <TextInput style={style.inputcadastro1}
                 placeholder="Digite seu Email"
                 onChangeText={email => this.setState({email})}
                 value={this.state.email}/>
-                <TextInput
+                <TextInput style={style.inputcadastro2}
                 placeholder="Digite sua Senha"
                 onChangeText={senha => this.setState({senha})}
                 value={this.state.senha}/>
                 <TouchableOpacity onPress={this._realizarCadastro}>
-                    <Text>Cadastro</Text>
+                    <Text style={style.button}>Cadastro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this._IrParaLogin}>
-                    <Text>Voltar ao Login</Text>
+                    <Text style={style.button}>Voltar ao Login</Text>
                 </TouchableOpacity>
             </View>
         );
     }
 }
+
+const style = StyleSheet.create({
+    page:
+    {display: "flex", backgroundColor: "#2F3538", height: 660 },
+    inputcadastro1:
+    {color: "#ffffff", display: "flex", marginLeft: 165, marginBottom: 20, marginTop: 20, },
+    inputcadastro:
+    {color: "#ffffff", display: "flex", marginLeft: 165, marginBottom: 20, marginTop: 20, },
+    inputcadastro2:
+    {color: "#ffffff", display: "flex", marginLeft: 178, marginBottom: 20, marginTop: 20, },
+    button:
+    {display: "flex",marginBottom: 20, marginTop: 20, textAlign: "center",color: "#ffffff", borderRadius: 30, borderColor: "#B40A1B", borderWidth: 1, }
+})
+
 export default SignUp
