@@ -166,6 +166,21 @@ class Main extends Component {
                                     )}
                                 />
 
+                                <Text style={styles.textLanc}>Comédia</Text>
+
+                                <FlatList
+                                    horizontal={true}
+                                    data={this.state.lista.filter(item => { return item.idCategoria === 3 })}
+                                    keyExtractor={item => item.idLancamento}
+                                    renderItem={({ item }) => (
+                                        <View>
+                                            <Image
+                                                style={styles.img}
+                                                source={{ uri: item.fotoLanc }}
+                                            />
+                                        </View>
+                                    )}
+                                />
                                 <Text style={styles.textLanc}>Drama</Text>
 
                                 <FlatList

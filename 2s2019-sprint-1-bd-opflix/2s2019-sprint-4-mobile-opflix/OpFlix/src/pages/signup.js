@@ -64,6 +64,7 @@ class SignUp extends Component {
     render(){
         return(
             <View style={style.page}>
+                <Text style={style.pagehead}>Cadastro</Text>
                 <TextInput style={style.inputcadastro}
                 placeholder="Digite seu Nome" 
                 onChangeText={nome => this.setState({nome})}
@@ -90,14 +91,19 @@ class SignUp extends Component {
 const style = StyleSheet.create({
     page:
     {display: "flex", backgroundColor: "#2F3538", height: 660 },
+    pagehead:
+    {backgroundColor: 'darkred', height: 70, textAlign: "center", display: "flex", textAlignVertical: "center",},
     inputcadastro1:
-    {color: "#ffffff", display: "flex", marginLeft: 165, marginBottom: 20, marginTop: 20, },
+    {color: 'white', display: "flex", marginBottom: 20, marginTop: 20, fontSize: 17, borderStyle: 'solid',
+    borderBottomColor: 'white', borderBottomWidth: 1, width: 410, textAlign: "center" },
     inputcadastro:
-    {color: "#ffffff", display: "flex", marginLeft: 165, marginBottom: 20, marginTop: 20, },
+    {color: 'white', display: "flex", marginBottom: 20, marginTop: 90, fontSize: 17, borderStyle: 'solid',
+    borderBottomColor: 'white', borderBottomWidth: 1, width: 410, textAlign: "center" },
     inputcadastro2:
-    {color: "#ffffff", display: "flex", marginLeft: 178, marginBottom: 20, marginTop: 20, },
+    {color: 'white', display: "flex", marginBottom: 20, marginTop: 20, fontSize: 17, borderStyle: 'solid',
+    borderBottomColor: 'white', borderBottomWidth: 1, width: 410, textAlign: "center" },
     button:
-    {display: "flex",marginBottom: 20, marginTop: 20, textAlign: "center",color: "#ffffff", borderRadius: 30, borderColor: "#B40A1B", borderWidth: 1, }
+    {backgroundColor: 'darkred' ,display: "flex",marginBottom: 20, marginTop: 20, textAlign: "center",color: "#ffffff", borderRadius: 30, borderColor: "#B40A1B", borderWidth: 1, }
 })
 
 export default SignUp

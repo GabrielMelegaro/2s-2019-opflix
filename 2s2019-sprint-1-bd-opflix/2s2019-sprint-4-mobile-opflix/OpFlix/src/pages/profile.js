@@ -20,6 +20,7 @@ class Profile extends Component{
 
     componentDidMount(){
         this.tokenAReceber();
+        
     }
 
     tokenAReceber = async () => {
@@ -45,8 +46,8 @@ class Profile extends Component{
                     <Text style={styles.textstyle}>{this.state.nome}</Text>
                     <Text style={styles.textstyle}>{this.state.email}</Text>
                     <View>
-                        <TouchableOpacity onPress={this._Logout}>
-                            <Text style={styles.textstyle}>Logout</Text>
+                        <TouchableOpacity>
+                            <Text  onPress={this._Logout} style={styles.textstyle}>Logout</Text>
                         </TouchableOpacity>
                     </View>
             </View>
