@@ -60,7 +60,7 @@ create table Lancamento
 	,Titulo varchar(255) not null
 	,Sinopse varchar(4000) not null 
 	,Duracao Time not null
-	,IdCategoria int foreign key references Categoria(IdCategoria) not null
+	,Categoria varchar(320) not null
 	,Tipo varchar(255) not null
 	,DataLancamento date not null
 	,Plataforma varchar(255) not null
